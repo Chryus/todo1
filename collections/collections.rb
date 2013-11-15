@@ -29,8 +29,13 @@ puts"...."
 # ["blake", "ashley", "scott"]
 #convert array to hash where key = elements & values = element with 3rd char converted to $
 teachers = ["blake", "ashley", "scott"]
-hash = Hash[teachers.map {|teacher| [teacher, teacher[2].replace(teacher[2]="$")]}]
-puts hash
+hash = {}
+teachers.collect do |name|
+  hash[name] = hash[name] = name
+  hash[name] = name.replace([name][2] = "$")
+end
+
+puts hash 
 puts"...." 
 #8. create a hash with two keys, "greater_than_10", "less_than_10" and their values will be an array of any numbers 
 #greater than 10 or less than 10 in the following array
