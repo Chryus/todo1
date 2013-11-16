@@ -24,7 +24,7 @@
 #puts card1
 
 def blackjack
-hand = (rand(11) + 1) + (rand(11) + 1)
+hand = rand(11) + 1) + (rand(11) + 1)
 print "Heya Sam, you've got #{hand}. Wanna another hit, Sam?"
 player_answer = gets.chomp.downcase
  
@@ -53,6 +53,8 @@ player_answer = gets.chomp.downcase
 	end
 end
 blackjack
+
+#? put each
 
 
 
