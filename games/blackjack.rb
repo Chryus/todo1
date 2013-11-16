@@ -18,22 +18,16 @@
 #After successfully completing the previous game (there should be a commit with a working version of this game), 
 #alter the game so that a player can "hit" as many times as they want.
 
-
-#card1 = rand(11) + 1
-#card2 = rand(11) + 1
-#puts card1
-
-def blackjack
-hand = rand(11) + 1) + (rand(11) + 1)
-print "Heya Sam, you've got #{hand}. Wanna another hit, Sam?"
+def blackjack1
+hand = (rand(11) + 1) + (rand(11) + 1)	
+print "Heya Sam, you've got #{hand}. Wanna another hit, Sam (yes or no)? "
 player_answer = gets.chomp.downcase
- 
  	if player_answer == "yes"
 	  hand += rand(11) + 1
 		if hand > 21
 		  puts "Gimme all your money, Sam. You lose"
 		else
-		  print "Heya Sam, you've got #{hand}. Ya feelin' lucky ?"
+		  print "Heya Sam, you've got #{hand}. Ya feelin' lucky? "
 			player_answer = gets.chomp.downcase
 				if player_answer == "yes"
 			    hand += rand(11) + 1
@@ -52,9 +46,28 @@ player_answer = gets.chomp.downcase
 		puts "You lose Same. Gimme all your money."
 	end
 end
-blackjack
 
-#? put each
+hand = (rand(11) + 1) + (rand(11) + 1)
+
+#refactor to allow player to ask as many times as they like
+def blackjack2(hand)
+	player_answer = "yes"
+	while hand < 21 && player_answer == "yes"
+		print "Heya Sam, you've got #{hand}. Wanna another hit, Sam (yes or no)? "
+		player_answer = gets.chomp.downcase
+		 	if player_answer == "yes"	
+				hand += rand(11) + 1
+					if hand > 21
+						puts "Gimme all your money, Sam. You lose!"
+					end
+			elsif player_answer == "no"
+				puts "Gimme all your money, Sam. You lose!"
+				player_answer = "no"
+			end		
+	end
+end
+
+blackjack(hand)
 
 
 
