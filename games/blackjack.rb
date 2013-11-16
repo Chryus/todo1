@@ -29,11 +29,11 @@ print "Heya Sam, you've got #{hand}. Wanna another hit, Sam?"
 player_answer = gets.chomp.downcase
  
  	if player_answer == "yes"
-	hand += rand(11) + 1
+	  hand += rand(11) + 1
 		if hand > 21
-			puts "Gimme all your money, Sam. You lose"
+		  puts "Gimme all your money, Sam. You lose"
 		else
-			print "Heya Sam, you've got #{hand}. Ya feelin' lucky ?"
+		  print "Heya Sam, you've got #{hand}. Ya feelin' lucky ?"
 			player_answer = gets.chomp.downcase
 				if player_answer == "yes"
 			    hand += rand(11) + 1
