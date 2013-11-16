@@ -37,11 +37,11 @@ player_answer = gets.chomp.downcase
 			player_answer = gets.chomp.downcase
 				if player_answer == "yes"
 			    hand += rand(11) + 1
-						if hand > 21
-							puts "Gimme all your money, Sam. You lose"
-						else
-							puts "You've got #{hand}! You win, Sam!!!"
-						end
+					if hand > 21
+						puts "Gimme all your money, Sam. You lose"
+					else
+						puts "You've got #{hand}! You win, Sam!!!"
+					end
 				end
 		end
 	elsif player_answer == "no" && hand < 21
@@ -50,11 +50,6 @@ player_answer = gets.chomp.downcase
 end
 blackjack
 
-def hit 
-	hand += rand(11) + 1
-end
-
-hand.hit? 
 
 
 
