@@ -11,14 +11,15 @@
 def messages
 	[
 	"Study hard young Rubywan, and you shall succeed.",
-	"The hardest things in life return the gretest rewards.",
+	"The hardest things in life return the greatest rewards.",
 	"Don't talk to me, I'm busy",
 	"Go adopt a bunny. It will make you happy.", 
 	"You shall find your answer in the Ruby documentation",
 	"Maybe", 
-	"Read Moby Dick and ask me again.", 
-	"Whew eeeeeee", 
-	"Don't go chasin' waterfalls. Please stick to the rivers and the lakes that you're used to." 
+	"Read Moby Dick and ask me again.",
+	"You really should read Blood Meridian if you haven't." 
+	"Whew-eeeeee", 
+	"Don't go chasin' waterfalls/Please stick to the rivers and the lakes that you're used to." 
 	]
 end
 
