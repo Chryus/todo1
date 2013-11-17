@@ -23,7 +23,11 @@
 
 def ask_play
 	print "Heya Sam, wanna play Blackjack? (yes or no)? "
-	gets.chomp.downcase
+		if gets.chomp.downcase == "yes"
+			return true
+		else
+			puts "goodbye"
+		end
 end
 
 def deal_hand
@@ -35,10 +39,10 @@ def hit
 end
 
 def play_blackjack
-	hand = deal_hand
 	play = ask_play
+	hand = deal_hand
 	card = hit
-		while hand < 21 && play == "yes"
+		while hand < 21 && play
 			print "Heya Sam, you've got #{hand}. Wanna another hit, Sam (yes or no)? "
 			want_hit = gets.chomp.downcase
 		 		if want_hit == "yes"	
