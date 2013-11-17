@@ -18,57 +18,45 @@
 #After successfully completing the previous game (there should be a commit with a working version of this game), 
 #alter the game so that a player can "hit" as many times as they want.
 
-def blackjack1
-hand = (rand(11) + 1) + (rand(11) + 1)	
-print "Heya Sam, you've got #{hand}. Wanna another hit, Sam (yes or no)? "
-player_answer = gets.chomp.downcase
- 	if player_answer == "yes"
-	  hand += rand(11) + 1
-		if hand > 21
-		  puts "Gimme all your money, Sam. You lose"
-		else
-		  print "Heya Sam, you've got #{hand}. Ya feelin' lucky? "
-			player_answer = gets.chomp.downcase
-				if player_answer == "yes"
-			    hand += rand(11) + 1
-					if hand > 21
-						puts "Gimme all your money, Sam. You lose!"
-					else
-						puts "You've got #{hand}! You win, Sam!!!"
-					end
-				else
-					if player_answer == "no" && hand < 21
-						puts "Gimme all your money, Sam. You lose!"
-					end
-				end
-		end
-	elsif player_answer == "no" && hand < 21
-		puts "You lose Same. Gimme all your money."
-	end
-end
-
-hand = (rand(11) + 1) + (rand(11) + 1)
-
 #refactor to allow player to ask as many times as they like
-def blackjack2(hand)
-	player_answer = "yes"
-	while hand < 21 && player_answer == "yes"
-		print "Heya Sam, you've got #{hand}. Wanna another hit, Sam (yes or no)? "
-		player_answer = gets.chomp.downcase
-		 	if player_answer == "yes"	
-				hand += rand(11) + 1
-					if hand > 21
-						puts "Gimme all your money, Sam. You lose!"
-					end
-			elsif player_answer == "no"
-				puts "Gimme all your money, Sam. You lose!"
-				player_answer = "no"
-			end		
-	end
+#add methods to separate concerns
+
+def ask_play
+	print "Heya Sam, wanna play Blackjack? (yes or no)? "
+	gets.chomp.downcase
 end
 
-blackjack(hand)
+def deal_hand
+	(rand(11) + 1) + (rand(11) + 1)
+end
 
+def hit
+	rand(11) + 1
+end
+
+def play_blackjack
+	hand = deal_hand
+	play = ask_play
+	card = hit
+		while hand < 21 && play == "yes"
+			print "Heya Sam, you've got #{hand}. Wanna another hit, Sam (yes or no)? "
+			want_hit = gets.chomp.downcase
+		 		if want_hit == "yes"	
+				hand += card
+						if hand > 21
+							puts "Gimme all your money, Sam. You lose!"
+							play = "no"
+						end	
+				else want_hit == "no"
+					puts "Gimme all your money, Sam. You lose!"
+					play = "no"
+				end		
+		end
+end
+
+play_blackjack
+
+#need to be able to check if there's a winner
 
 
 
