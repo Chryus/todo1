@@ -21,46 +21,51 @@
 #refactor to allow player to ask as many times as they like
 #add methods to separate concerns
 
-def ask_play
-	print "Heya Sam, wanna play Blackjack? (yes or no)? "
+
+	def play_blackjack
+
+	def ask_play
+		print "Heya Sam, wanna play Blackjack? (yes or no)? "
 		if gets.chomp.downcase == "yes"
-			return true
+			@play = true
+			@hand = (rand(11) + 1) + (rand(11) + 1)
+			puts @hand
+			hit		
 		else
 			puts "goodbye"
 		end
-end
+	end
 
-def deal_hand
-	(rand(11) + 1) + (rand(11) + 1)
-end
 
-def hit
-	rand(11) + 1
-end
-
-def play_blackjack
-	play = ask_play
-	hand = deal_hand
-	card = hit
-		while hand < 21 && play
-			print "Heya Sam, you've got #{hand}. Wanna another hit, Sam (yes or no)? "
-			want_hit = gets.chomp.downcase
-		 		if want_hit == "yes"	
-				hand += card
-						if hand > 21
-							puts "Gimme all your money, Sam. You lose!"
-							play = "no"
-						end	
-				else want_hit == "no"
-					puts "Gimme all your money, Sam. You lose!"
-					play = "no"
-				end		
+	def check_win
+		if @hand == 21 
+			puts "You won, Sam! You're goin' Sizzler!"
+		elsif @hand > 21 
+			puts "Gimme all your money, Sam. Ya lost."
+		else 
+			hit
 		end
+	end
+
+	
+	def hit
+		while @hand < 21 && @play
+		print "Heya Sam, you've got #{@hand}. Wanna another hit, Sam (yes or no)? "
+		@want_hit = gets.chomp.downcase
+			if @want_hit == "yes"
+				@hand += (rand(11) + 1)
+				puts @hand
+				check_win
+			else
+				puts "Gimme all your money, Sam. Ya lost."
+				@play = false
+			end
+		end
+	end
+ask_play
 end
 
 play_blackjack
-
-#need to be able to check if there's a winner
 
 
 
