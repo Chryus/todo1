@@ -1,0 +1,15 @@
+def decode
+joined_password.gsub("ashley", " ")
+joined_password.gsub!("blake", "e")
+unjoin_password = password.split(" ")
+#puts "#{unjoin_password}" #["internets", "the", "all"]
+new_array = []
+string = new_array.join("_")
+new_password_array = joined_password.split(" ")
+new_password_array[1] = new_password_array[3]
+new_password_array.last = new_password_array.first
+password_string = new_
+end
+
+
+

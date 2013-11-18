@@ -2,7 +2,7 @@
 #when the number is divisible by 3, say fizz
 #when the number is divisible by 5 say buzz
 #when the number is divisible by 3 and 5 say fizzbuzz
-
+=begin
 1.upto(100) do |i|
 		if i % 15 == 0
 			puts "fizzbuzz"
@@ -14,19 +14,20 @@
 			puts i 
 		end
 end
-
-puts "......"
+=end
 
 def fizzbuzz(number)
 		if number % 15 == 0
-			puts "fizzbuzz"
+			"fizzbuzz"
 		elsif number % 3 == 0 
-			puts "fizz"
+			"fizz"
 		elsif number % 5 == 0
-			puts "buzz"
+			"buzz"
 		else
-			puts number 
+			number
 		end
 end
 
-fizzbuzz(15)
+
+
+

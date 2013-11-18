@@ -1,0 +1,24 @@
+def encode(password)
+	pass_as_string = password.to_s #password is now a symbol
+	password_array = pass_as_string.split("_") #password is now an array
+	new_password_array = [] #creates new array
+	new_password_array[0] = password_array.last #puts last item in p_a into first item (0)
+	new_password_array[3] = password_array.first
+	new_password_array[1] = password_array[1]
+	new_password_array.compact! #removes nils from array, so we have 0 1 3 --> 0 1 2
+	joined_password = new_password_array.join(" ") #turn array in a string
+	join_password.gsub!("e", "blake")
+	joined_password.gsub(" ", "ashley")
+	joined_passord
+end
+
+encode("It's monday morning ya'll")
+
+#password starts as symbol
+#line 2 turns symblol into a string 
+#line 3 turns string to array
+#line 4 creates an emptry array so we can reorder without messing 
+#up the original
+#line 5 puts 
+#line 8 compact removes the nil value
+#line 9 turn array into string
