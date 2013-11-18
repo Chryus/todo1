@@ -3,16 +3,14 @@
 #when the number is divisible by 5 say buzz
 #when the number is divisible by 3 and 5 say fizzbuzz
 
-i = 1
-while i < 101
-	if i % 3 == 0 
-		puts "fizz"
-	elsif i % 5 == 0
-		puts "buzz"
-	elsif i % 3 == 0 && i % 5 == 0 
-		puts "fizzbuzz"
-	else
-		puts i
-	end
-	i = i + 1
+1.upto(100) do |i|
+		if i % 15 == 0
+			puts "fizzbuzz"
+		elsif i % 3 == 0 
+			puts "fizz"
+		elsif i % 5 == 0
+			puts "buzz"
+		else
+			puts i 
+		end
 end
