@@ -31,11 +31,16 @@ puts"...."
 #  ["blake", "scott", "ashley"]
 new_array = teachers.values_at(0, 2, 1)
 puts new_array
+
 #or
 newer_array = teachers
 ashley = new_array.pop
 newer_array.insert(1, ashley)
 puts new_array
+
+#or
+or newest_array = teachers.reverse.rotate(2)
+puts newest_array
 
 #7. using the following array create a hash where the elements in the array are 
 #the keys and the values of the hash are those elements with the 3rd character changed to a dollar sign.
@@ -180,8 +185,17 @@ add_s
  
 #word count
  
-#"The summer of tenth grade was the best summer of my life.  I went to the beach everyday and we had amazing weather.  The weather didnt really vary much and was always pretty hot although sometimes at night it would rain.  I didnt mind the rain because it would cool everything down and allow us to sleep peacefully.  Its amazing how much the weather affects your mood.  Who would have thought that I could write a whole essay just about the weather in tenth grade.  Its kind of amazing right?  Youd think for such an interesting person I might have more to say but you would be wrong"
- 
+story = "The summer of tenth grade was the best summer of my life.  I went to the beach everyday and we had amazing weather.  The weather didnt really vary much and was always pretty hot although sometimes at night it would rain.  I didnt mind the rain because it would cool everything down and allow us to sleep peacefully.  Its amazing how much the weather affects your mood.  Who would have thought that I could write a whole essay just about the weather in tenth grade.  Its kind of amazing right?  Youd think for such an interesting person I might have more to say but you would be wrong"
+array = story.split
+word_count = Hash.new(0)
+
+array.each do |word|
+  word_count[word] += 1
+end
+
+puts word_count
+
+
 #Count how many times each word appears in my story.
 #Tip: You'll need to use Hash.new(0) to do this rather than creating a hash using literal syntax like {}.
 
