@@ -38,11 +38,13 @@ languages.each do |oo_or_func, language_hash|
   #:oo, {:ruby => {...}}
   language_hash.each do |language, type_hash|
     #:ruby => {:type => "interpreted"}
-      if new_languages[language].nil?
+    #if new_languages[language].nil? >> this is actually unnecessary here
+    #but is a good practice
         #if language doesn't already exist, create language with hash 
         new_languages[language] = {}
-      end 
+    #end
     type_hash.each do |type, str_value|
+      #:type => "compiled" 
       new_languages[language][:style] = [oo_or_func]
       new_languages[language][:type] = str_value 
     end
