@@ -21,7 +21,16 @@ describe "#roll_dice" do
 		expect(roll_dice.reduce(:+)).to be <= 30
 	end
 
-	#winner check
+end
 
+describe "#win?" do
+
+	it "should return true when roll is equal to an array with all the same values" do
+		expect(win?([1,1,1,1,1])).to eq (true)
+	end
+
+	it "should return false when a roll is not equal to an array with all the same values" do
+		expect(win?([1,2,1,1,1])).to eq (false)
+	end
 end
 
