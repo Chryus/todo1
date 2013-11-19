@@ -1,9 +1,3 @@
-########################
-# NYC PIGEON ORGANIZER #
-########################
-
-# Start with the following collected data on NYC pigeons.
-
 pigeon_data = {
   :color => {
     :purple => ["Theo", "Peter Jr.", "Lucky"],
@@ -23,6 +17,65 @@ pigeon_data = {
   }
 }
 
+new_pigeon = {}
+pigeon_data.each_pair do |key, value|
+  #key is color, gender, lives
+  #value is hash
+  value.each do |attribute_key, name_array|
+    #attribute_key = purple, grey, male, subwayetc.
+    #name_array = all the names, theo, etc
+    puts name_array
+    name_array.each do |name|
+      new_pigeon[name] = {}
+    end
+  end
+end
+
+
+  
+end
+
+
+#blakes code
+#the first time we go around key will be color
+#2nd time we go around key will be gender
+#3rd time we go around key will be lives
+new_pigeon = {}
+pigeon_data.each_pair do |key, value|
+  # keys color, gender, lives
+  # value => {
+  #   :purple => ["Theo", "Peter Jr.", "Lucky"],
+  #   :grey => ["Theo", "Peter Jr.", "Ms .K"],
+  #   :white => ["Queenie", "Andrew", "Ms .K", "Alex"],
+  #   :brown => ["Queenie", "Alex"]
+  # }
+  value.each_pair do |attribute, name_array|
+    # attribute => purple, grey
+    # name array => ["Theo", "Peter Jr.", "Lucky"]
+    name_array.each do |name|
+      # "theo"
+      if new_pigeon[name].nil?
+        new_pigeon[name] = {}
+      #puts new_pigeon
+      # new_pigeon = {"theo" => {:color => []}}
+      if new_pigeon[name][:color].nil?
+        new_pigeon[name][:color] = []
+      puts new_pigeon
+      puts ">>>>>"
+      if key == :color
+        new_pigeon[name][key] << attribute
+      else
+        # name => "theo", "key" => gender or lives, "attribute" => "male", female, subway
+        new_pigeon[name][key] = attribute
+      end
+    end
+  end
+end
+puts new_pigeon
+
+
+
+#MY CODE
 #create new hash to store pigeon name as key
 male_pigeon_list = {}
 female_pigeon_list = {}
@@ -36,15 +89,13 @@ pigeon_data[:gender][:female].each do |key, value|
   female_pigeon_list[key] = value
 end
 
-#puts male_pigeon_list
-#puts female_pigeon_list
-
 pigeon_list = male_pigeon_list.merge(female_pigeon_list)
 puts pigeon_list
 
-
-pigeon_list.each do |key, hash|
-  hash[:color] = []
+pigeon_data[:gender].each do |key, array|
+  array.each do |name|
+    pigeon_list[name][:gender] = key
+  end
 end
 
 puts pigeon_list
