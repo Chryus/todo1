@@ -23,6 +23,8 @@ puts"...."
 #5. print each element of the array to the console
 #  ["blake", "ashley", "scott"]
 teachers.each { |teacher| print teacher}
+#or
+puts teachers
 puts"...." 
 
 #6. create a new array in the following order
@@ -33,10 +35,16 @@ new_array = teachers.values_at(0, 2, 1)
 puts new_array
 
 #or
+teachers = ["blake", "ashley", "scott"]
 newer_array = teachers
 ashley = new_array.pop
 newer_array.insert(1, ashley)
 puts new_array
+
+#or
+teachers = ["blake", "ashley", "scott"]
+newer_array = teachers.insert(1, teachers.delete_at(2))
+puts newer_array
 
 #or
 or newest_array = teachers.reverse.rotate(2)
@@ -60,6 +68,19 @@ hash = {}
     #hash[name][-1] = "9"
   end
 puts hash
+
+teachers = ["blake", "ashley", "scott"]
+hash = {}
+teachers.each do |name|
+  #here we're saying hash[name] is key
+  #the value is after the = sign
+  hash[name] = name[0..1] + "$" + name[3..name.length]
+  puts hash
+end
+
+
+
+
 
 #8. create a hash with two keys, "greater_than_10", "less_than_10" and their values will be an array of any numbers 
 #greater than 10 or less than 10 in the following array
@@ -95,6 +116,15 @@ num_hash = {
   end
 puts num_hash
 
+#or
+
+#compact removes the nils
+my_number_array = [100, 1000, 5, 2, 3, 15, 1, 1, 100]
+my_number_hash = { 
+  :greater_than => my_number_array.collect { |x| if x > 10 }.compact
+  :less_than => my_number_array.collect { |x| if x < 10}.compact
+}
+
 #refactor using ternary operator
 num_hash = {
   :greater_than_10 => [],
@@ -114,6 +144,7 @@ puts num_hash
 winners = []
   teachers = {:blake => "winner", :ashley => "loser", :caroline => "loser", :carlos => "winner"}
     teachers.each { |k, v| value == "winner" ?  winners << k : "nil" }
+  
 puts winners
 
 #10. add the following arrays
@@ -122,9 +153,16 @@ def add_arrays(array1, array2)
   puts array1 << array2
 end
 
+#or
 a = [1,2,3]
 b = [5,9,4]
 add_arrays(a, b)
+#or
+a = [1,2,3]
+b = [5,9,4]
+a.concat(b)
+#or
+a|b
 
 
 #11. find all words that begin with "a" in the following array
@@ -140,24 +178,81 @@ end
 
 find_words
 
+#or each vs select
+stuff = ["apple", "orange", "pear", "avis", "arlo", "ascot"]
+container = []
+stuff.each do |item|
+  if item[0] == "a"
+    container << item
+  end
+end
+puts container
+#or select which simplifies each!
+
+stuff = ["apple", "orange", "pear", "avis", "arlo", "ascot" ]
+
+a_words = stuff.select {|item| item[0]=="a"}
+
+#or with reg expresssions
+stuff = ["apple", "orange", "pear", "avis", "arlo", "ascot"]
+container = []
+stuff.each do |item|
+  if item.match == (/^a/i)
+    container << item
+  end
+end
+puts container
+
+
+
+
+array = ["apple", "orange", "pear", "avis", "arlo", "ascot"]
+def find_words2(array)
+  array.each do |fruit|
+   if fruit[0] == "a"
+     puts fruit
+   end
+  end
+end
+
 #11. sum all the numbers in the following array
-def sum_array1
+
   a = [11,4,7,8,9,100,134]
   sum = 0
   a.each do |num|
     sum += num
   end
   puts sum 
+
+#examples from class
+#each time we go ruby is going to keep track of the sum
+#we tell it to start at zero
+#If you specify a block, then for each element in enum (i.e, array) the block is passed an 
+#accumulator value (sum) and the element. Whatever we do in here becomes the new value of sum. 
+#The final value of sum is the return value!
+[1,2,3].reduce(0) do |sum, number| 
+sum + number
 end
+=begin this does
+0+1
+1+2
+3+3
+=end
+#return value is the final value of sum = 6
 
-#or
 
-def sum_array
+#If you specify a symbol instead, then each element in the collection 
+#will be passed to the named method of memo.
   a = [11,4,7,8,9,100,134]
   puts a.reduce(:+)
+  #or a.reduce(0) {|sum, item| sum + item}
   puts "....."
+
+
+#collect returns a new array based on the block (it has an embedded .each iterator)
+[1,2,3].collect do |element| 
+element + 1
 end
-sum_array
 
 #but see count, which returns the number of items in an array
 a = [11,4,7,8,9,100,134]
