@@ -77,6 +77,42 @@ ap holiday_supplies
 #5. Write a method to collect all Winter supplies from all the winter holidays.
 #: `winter_suppliers(holiday_supplies) #=> ["Lights", "Wreath", etc]`
 
+def winter_supplies(holiday_supplies)
+  winter_supplies = []
+  holiday_supplies[:winter].each do |holiday, supplies|
+    supplies.each do |item|
+      winter_supplies << item
+    end
+  end
+  puts winter_supplies
+end
+
+winter_supplies(holiday_supplies)
+
+#6. Write a loop to list out all the supplies you have for each holiday and the season.
+
+new_hash = {}
+holiday_supplies.each do |key, value|
+  print "\n#{key.capitalize}:"
+  value.each do |holiday, favors|
+    print "\n\t#{holiday.capitalize}:"
+      favors.each do |item|
+        print " #{item}"
+      end
+  end
+end
+
+#Output:
+#{}```
+#Winter:
+#  Christmas: Lights and Wreath
+#  New Years: Party Hats
+#{}```
+
+#7. Write a method to collect all holidays with BBQ.
+
+#`holidays_with_bbqs(holiday_supplies) #=> [:fourth_of_july, :memorial_day]`
+ 
 holiday_supplies = {
   :winter => {
     :christmas => ["Lights", "Wreath"],
@@ -93,21 +129,26 @@ holiday_supplies = {
   }
 }
 
-def winter_supplies(holiday_supplies)
-  winter_supplies = []
-  holiday_supplies[:winter].each do |holiday, supplies|
-    supplies.each do |item|
-      winter_supplies << item
+def holidays_with_bbqs(holiday_supplies)
+  bbq_holidays = []
+  holiday_supplies.each do |key, hash_value|
+    hash_value.each do |holiday, supplies_array|
+      supplies_array.each do |item|
+        if item == "BBQ"
+          bbq_holidays << holiday
+        end
+      end
     end
   end
-  puts winter_supplies
+  puts bbq_holidays
 end
 
-winter_supplies(holiday_supplies)
+puts "testing holidays w bbq #{holidays_with_bbqs(holiday_supplies)}"
 
-6. Write a loop to list out all the supplies you have for each holiday and the season.
 
-#this puts all supplies for all season
+
+=begin
+this puts all supplies for all season
 def find_supplies(hash)
   supplies = []
   hash.each do |key, value|
@@ -122,16 +163,5 @@ end
 
 find_supplies(holiday_supplies)
 
-
-Output:
-```
-Winter:
-  Christmas: Lights and Wreath
-  New Years: Party Hats
-```
-
-7. Write a method to collect all holidays with BBQ.
-
-`holidays_with_bbqs(holiday_supplies) #=> [:fourth_of_july, :memorial_day]`
 
 =end

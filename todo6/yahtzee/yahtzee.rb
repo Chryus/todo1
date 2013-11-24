@@ -8,4 +8,4 @@
     roll.uniq.length == 1 ? true : false
   end
 
-  win?([5,5,4,3,5])
+
