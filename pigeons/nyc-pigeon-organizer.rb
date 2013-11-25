@@ -33,6 +33,7 @@ pigeons.each do |key, hash|
   # <:color => {:purple => ["Theo", "Peter Jr.", "Lucky"],etc}>
   hash.each do |attribute, name_array|
     # <:purple => ["Theo", "Peter Jr.", "Lucky"]>
+    # <"Subway" => ["Theo", "Queenie"]>
     name_array.each do |name|
       # <["Theo", "Peter Jr.", "Lucky"]>
       if pigeons2[name].nil?
