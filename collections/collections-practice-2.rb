@@ -21,7 +21,7 @@ require 'awesome_print'
 # Create a new array from the captain_planet array with all the elements that contain the letter "a".  
 	#include? searches an element to see if it has a character
 	captain_planet = ["earth", "fire", "wind", "water", "heart"]
-	ap captain_planet.select { |element| element.include?("a") }
+	captain_planet.select { |element| element.include?("a") }
 	#=> ["earth", "water", "heart"]
 
 # Identify the first element in the stuff array that begins with the letters "wa".
@@ -34,12 +34,40 @@ require 'awesome_print'
 	#select returns all the elements for which the block is true
 	stuff = ["candy", :pepper, "wall", :ball, "wacky"]
 	stuff.select { |element| element[0..1] == "wa" }
-	 => ["wall", "wacky"]
+	# => ["wall", "wacky"]
 
 # Remove anything that's not a string from an array.
 # Hint: Use the method "class"  "blake".class
 
-# Change the third letter of all strings in an array.  Your solution should work for arrays that have mixed types of objects inside it.
+# strings = []
+# stuff.each do |element|
+# 	if element.class == String
+# 		strings << element
+# 	end
+# end
+# ap strings
+#refactor with delete_if
+stuff.delete_if do |element|
+	element.class != String
+end
+#ap stuff
+
+
+# Change the third letter of all strings in an array.  
+#Your solution should work for arrays that have mixed types of objects inside it.
+
+def change_char(array, char)
+array.collect do |element|
+		if element.class == String
+			element[2] = char
+		end
+	end
+end
+
+change_char(stuff, "@")
+
+ap stuff
+
 
 # Count the number of times each word appears in a string and store that data in a hash that has the word as the key and the count as the value.
 
