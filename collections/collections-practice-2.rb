@@ -252,19 +252,13 @@ schools = {
 new_hash = {}
 schools.each do |school, hash|
 	#"flatiron school bk" => {:location => "NYC",:price => "free"}
-	hash.each do |key, value|
-		if key == :location
-      if new_hash[value].nil?
-        new_hash[value] = [] 
-        new_hash[value] << {:name => school}
-      else
-        new_hash[value] << {:name => school}
-      end
-    if key == :price
-      new_hash[value] << {:price => value}
+  #hash[:location] = NYC
+		if new_hash[hash[:location]].nil?
+      new_hash[hash[:location]] = [] 
+      new_hash[hash[:location]] << {:name => school, :price => hash[:price]}
+    else
+      new_hash[hash[:location]] << {:name => school, :price => hash[:price]}
     end
-    end
-	end
 end
   ap new_hash
 
