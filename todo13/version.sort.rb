@@ -38,81 +38,77 @@
 #      abc-1.01a.tgz      abc-1.012b.tgz
 require ('awesome_print')
 
-# class Array 
-
-#   attr_accessor :filenames
-
-#   def initialize(filenames)
-#     @filenames = filenames
-#   end
-
-filnames = [
-  "foo-1.10.2.ext",
-  "foo-1.11.ext",
-  "foo-1.3.ext",
-  "foo-1.50.ext",
-  "foo-1.8.7.ext",
-  "foo-1.9.3.ext",
-  "foo-1.ext",
-  "foo-10.1.ext",
-  "foo-10.ext",
-  "foo-100.ext",
-  "foo-13.ext",
-  "foo-2.0.0.ext",
-  "foo-2.0.1.ext",
-  "foo-2.0.ext",
-  "foo-2.007.ext",
-  "foo-2.01.ext",
-  "foo-2.012b.ext",
-  "foo-2.01a.ext",
-  "foo-2.0a.ext",
-  "foo-2.0b.ext",
-  "foo-2.1.ext",
-  "foo-25.ext",
-  "foo-6.ext",
-]
-version_sorted_filenames = [
-  "foo-1.ext",
-  "foo-1.3.ext",
-  "foo-1.8.7.ext",
-  "foo-1.9.3.ext",
-  "foo-1.10.2.ext",
-  "foo-1.11.ext",
-  "foo-1.50.ext",
-  "foo-2.0.ext",
-  "foo-2.0a.ext",
-  "foo-2.0b.ext",
-  "foo-2.0.0.ext",
-  "foo-2.0.1.ext",
-  "foo-2.01.ext",
-  "foo-2.1.ext",
-  "foo-2.01a.ext",
-  "foo-2.007.ext",
-  "foo-2.012b.ext",
-  "foo-6.ext",
-  "foo-10.ext",
-  "foo-10.1.ext",
-  "foo-13.ext",
-  "foo-25.ext",
-  "foo-100.ext",
-]
-
-  # def version_sort(array)
-  #we want to compare the file names
-    array.each do |filename|
-      array.split("'").each do |word|
-        ap word
-      end
-    # filename(\.[A-Za-z~][A-Za-z0-9~]*)*’) <=> filename(\.[A-Za-z~][A-Za-z0-9~]*)*’)
-    end
-#   end
-
+# # class Array
+#     # def version_sort(filnames)
+#       array.split("'") do |filename|
+#         filename.each do |word|
+#         ap word
+#       # end
+#     # filename(\.[A-Za-z~][A-Za-z0-9~]*)*’) <=> filename(\.[A-Za-z~][A-Za-z0-9~]*)*’)
+#     end  
+#     end
 # end
+filenames = [
+    "foo-1.10.2.ext",
+    "foo-1.11.ext",
+    "foo-1.3.ext",
+    "foo-1.50.ext",
+    "foo-1.8.7.ext",
+    "foo-1.9.3.ext",
+    "foo-1.ext",
+    "foo-10.1.ext",
+    "foo-10.ext",
+    "foo-100.ext",
+    "foo-13.ext",
+    "foo-2.0.0.ext",
+    "foo-2.0.1.ext",
+    "foo-2.0.ext",
+    "foo-2.007.ext",
+    "foo-2.01.ext",
+    "foo-2.012b.ext",
+    "foo-2.01a.ext",
+    "foo-2.0a.ext",
+    "foo-2.0b.ext",
+    "foo-2.1.ext",
+    "foo-25.ext",
+    "foo-6.ext",
+    ]
+version_sorted_filenames = [
+    "foo-1.ext",
+    "foo-1.3.ext",
+    "foo-1.8.7.ext",
+    "foo-1.9.3.ext",
+    "foo-1.10.2.ext",
+    "foo-1.11.ext",
+    "foo-1.50.ext",
+    "foo-2.0.ext",
+    "foo-2.0a.ext",
+    "foo-2.0b.ext",
+    "foo-2.0.0.ext",
+    "foo-2.0.1.ext",
+    "foo-2.01.ext",
+    "foo-2.1.ext",
+    "foo-2.01a.ext",
+    "foo-2.007.ext",
+    "foo-2.012b.ext",
+    "foo-6.ext",
+    "foo-10.ext",
+    "foo-10.1.ext",
+    "foo-13.ext",
+    "foo-25.ext",
+    "foo-100.ext",
+    ]
 
+    filenames.each do |filename|
+      ap filename.split(/(?>=\-).*(?=.e)/)
+    end
 
+    #ap filenames
 
-# filenames = Array.new(filenames)
-# ap filenames.version_sort(filenames)
+# .*(?=\.e)/).sort
+
+# Array.new(filenames)
+# ap version_sort(filenames)
 
 
 
