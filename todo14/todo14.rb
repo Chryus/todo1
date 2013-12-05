@@ -17,15 +17,13 @@ end
 def test_error
 	if a + b <= c || b + c <= a || a + c <= b
 		raise TriangleError
-	elsif a < 0 || b < 0 || c < 0
-		raise TriangleError
-	elsif a == 0 || b == 0 || c == 0
+	elsif a <= 0 || b <= 0 || c <= 0
 		raise TriangleError
 	end
 end
 
 def kind
-	if say_error
+	if test_error
 	elsif a == b && b == c
 		:equilateral
 	elsif (a == b && a != c) || (a == c && c != b) || (b == c && b != a)
