@@ -73,6 +73,14 @@ filenames = [
     "foo-25.ext",
     "foo-6.ext",
     ]
+
+
+     filenames.each do |filename|
+      ap filename.split(/(?<=\-)(.*)(?=\.e)/).sort
+        #(?=.e)/)
+    end
+
+
 version_sorted_filenames = [
     "foo-1.ext",
     "foo-1.3.ext",
@@ -99,9 +107,7 @@ version_sorted_filenames = [
     "foo-100.ext",
     ]
 
-    filenames.each do |filename|
-      ap filename.split(/(?>=\-).*(?=.e)/)
-    end
+   
 
     #ap filenames
 
