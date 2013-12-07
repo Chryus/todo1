@@ -43,16 +43,7 @@ def array_init(arg = 5)
 	end
 end
 
-# def array_init(arg = 5)
-#   if block_given?
-#     arry = Proc.new {|i| yield i}
-#     (0...arg).to_a.collect(&arry)
-#   else
-#     arry = Proc.new {|i| (i * 100).to_s}
-#     (0...arg).to_a.collect(&arry)
-#   end
-# end
-
+.2323
 
 
 
