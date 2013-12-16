@@ -1,3 +1,18 @@
+
+
+def array_init(arg = 5)
+	if block_given?
+		arry = Proc.new {|i| yield i} #yield to the block given and return its value
+		(0...arg).to_a.collect(&arry)#(...) denotes values up to arg so, [0,1,2,3,4]
+	else
+		arry = Proc.new {|i| (i * 100).to_s}#do this instead of yield
+		(0...arg).to_a.collect(&arry)
+	end
+end
+
+#.2323
+
+
 #prereqs: initializing, methods, blocks, yield, arrays
 # Write a method that initializes an Array
 # it receives one parameter, which is 5 by default, but can be overridden by the user
@@ -32,19 +47,6 @@
 #
 
 # array_init(2) { |i| i.to_s } #this is the block given
-
-def array_init(arg = 5)
-	if block_given?
-		arry = Proc.new {|i| yield i} #yield to the block given and return its value
-		(0...arg).to_a.collect(&arry)#(...) denotes values up to arg so, [0,1,2,3,4]
-	else
-		arry = Proc.new {|i| (i * 100).to_s}#do this instead of yield
-		(0...arg).to_a.collect(&arry)
-	end
-end
-
-.2323
-
 
 
 

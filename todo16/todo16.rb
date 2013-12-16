@@ -1,13 +1,13 @@
 # Instructions:
 # Count elements in an Array by returning a hash with keys of the elements and values of the amount of times they occur.
  
-test = ['cat', 'dog', 'fish', 'fish']
+#test = ['cat', 'dog', 'fish', 'fish']
  
 def count(array)
-	num = 0
 	hash = Hash.new
-	array.each_with_index { |item, index|
-		hash[item] = index }
+	array.each do |item|
+		hash[item] = array.select{|other_item| other_item == item}.size
+	end
 	hash
 end
  
