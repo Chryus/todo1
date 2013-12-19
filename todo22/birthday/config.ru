@@ -1,4 +1,4 @@
 require './app'
 
-run Birthday::App.new
+run BirthdayDee::App.new
 

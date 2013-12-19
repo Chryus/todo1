@@ -1,10 +1,22 @@
 require 'sinatra/base'
-require './lib/compliment'
+require './lib/birthday.rb'
 
-module Birthday
+module BirthdayDee
   class App < Sinatra::Application
-    enable :sessions
+    
     get '/' do
+      erb :index  
+    end
+
+    post '/results' do
+    @month = params["month"].to_i 
+    @day = params["day"].to_i
+      if @month == Date.today.month && @day == Date.today.day
+          erb :birthday
+      else 
+          erb :not_your_bday
+      end
+    end
 
   end
 end
