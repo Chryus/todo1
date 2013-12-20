@@ -38,7 +38,7 @@ template {
 }
 
 html {
-  font-family: sans-serif;
+  font-family: Futura;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -93,7 +93,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, serif;
+  font-family: Futura;
   font-size: 1em;
 }
 
@@ -153,7 +153,7 @@ input,
 select,
 textarea {
   margin: 0;
-  font-family: inherit;
+  font-family: Futura;
   font-size: 100%;
 }
 
@@ -303,18 +303,23 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Futura", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
+  color: black;
+  background-image:url('../img/background.jpg'); no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: black;
 }
 
 input,
 button,
 select,
 textarea {
-  font-family: inherit;
+  font-family: Futura;
   font-size: inherit;
   line-height: inherit;
 }
@@ -385,6 +390,16 @@ hr {
   border: 0;
 }
 
+h1 .purple {
+  color: #3C0140;
+}
+
+h1 .pink {
+  color: #B00374;
+}
+
+
+
 h1,
 h2,
 h3,
@@ -397,10 +412,10 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Futura", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  color: black;
 }
 
 h1 small,
@@ -466,11 +481,13 @@ h6 .small {
 
 h1,
 .h1 {
-  font-size: 36px;
+  font-family: Futura;
+  font-size: 86px;
 }
 
 h2,
 .h2 {
+  font-family: Futura;
   font-size: 30px;
 }
 
@@ -741,7 +758,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Futura, Monaco, Consolas, "Courier New", monospace;
 }
 
 code {
@@ -1900,7 +1917,7 @@ select[size] {
 }
 
 select optgroup {
-  font-family: inherit;
+  font-family: Futura;
   font-size: inherit;
   font-style: inherit;
 }
@@ -2680,7 +2697,7 @@ input[type="button"].btn-block {
 }
 
 @font-face {
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Futura';
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
@@ -2689,7 +2706,7 @@ input[type="button"].btn-block {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Futura';
   -webkit-font-smoothing: antialiased;
   font-style: normal;
   font-weight: normal;
@@ -6454,7 +6471,7 @@ button.close {
   height: 20px;
   margin-top: -10px;
   margin-left: -10px;
-  font-family: serif;
+  font-family: Futura;
 }
 
 .carousel-control .icon-prev:before {
