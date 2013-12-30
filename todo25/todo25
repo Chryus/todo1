@@ -1,0 +1,21 @@
+TODO25
+http://sewingandembroiderywarehouse.com/embtrb.htm
+ 
+there is something wrong with this page.
+ 
+using your web inspector identify what is wrong.
+ 
+as algorithmically as possible, explain why this error causes this visual effect.
+ 
+ 
+what are the other things wrong with this page? why do you think they are wrong?
+ 
+when was this page made? how? tell how you figured it out.
+ 
+#pin #todo
+
+Ah-ha! It seems we have a web page with nested h3s, which is a bit no-no in HTML5. The resulting effect is a cascading size increase for each successive header. 
+
+Using the web inspector's hourglass feature, when you hover over a header and compare it with its predescessor, you can see that nesting h3s is causing the browser to nearly double the width and height of each h3.
+
+Given that the DOCTYPE says HTML 3.2, I estimate this page dates back to 1997.
