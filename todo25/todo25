@@ -18,4 +18,6 @@ Ah-ha! It seems we have a web page with nested h3s, which is a bit no-no in HTML
 
 Using the web inspector's hourglass feature, when you hover over a header and compare it with its predescessor, you can see that nesting h3s is causing the browser to nearly double the width and height of each h3.
 
-Given that the DOCTYPE says HTML 3.2, I estimate this page dates back to 1997.
+According to W3schools, "since users may skim your pages by its headings, it is important to use headings to show the document structure. H1 headings should be used as main headings, followed by H2 headings, then the less important H3 headings, and so on." Nesting h3s defy's the logical document structure of HTML5, which carefully manages the hierarchy of a page for users' ease of browsing and developers ease of styling.
+
+Given that the DOCTYPE says HTML 3.2, I estimate this page dates back to 1997. I recommend rewriting the page to comply with HTML5 standards.
