@@ -3,12 +3,12 @@
  
 # Code:
 def even_sum(arr)
-	  arr.each_with_object([]) do |str, array| 
+	  temp = arr.each_with_object([]) do |str, array| 
 	  if str.length.even?
 	  	array << str.reverse
 	  end
-	  puts array
 	end
+	return temp
 end
  
 even_sum(["cat", "dog", "bird", "fish"]) #=> ["drib", "hsif"]
