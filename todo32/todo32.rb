@@ -8,7 +8,7 @@ class Hash
     args.each do |arg|
       array << self.key(arg)
     end
-    ap array
+    return array
   end
 end
  
