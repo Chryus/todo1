@@ -1,0 +1,17 @@
+<%= form_for(@chinchilla) do |f| %>
+  <% if @chinchilla.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chinchilla.errors.count, "error") %> prohibited this chinchilla from being saved:</h2>
+
+      <ul>
+      <% @chinchilla.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

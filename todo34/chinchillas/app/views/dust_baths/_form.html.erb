@@ -1,0 +1,17 @@
+<%= form_for(@dust_bath) do |f| %>
+  <% if @dust_bath.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dust_bath.errors.count, "error") %> prohibited this dust_bath from being saved:</h2>
+
+      <ul>
+      <% @dust_bath.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
