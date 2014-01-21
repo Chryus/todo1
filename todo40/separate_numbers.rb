@@ -9,8 +9,7 @@ def separate_with_comma(n)
     counter = 0
     modify.each_char do |char|
       if counter % 3 == 0 && counter != 0
-        char = char + ","
-        temp << char
+        temp << char << ","
         counter += 1
       else
         temp << char
