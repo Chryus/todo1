@@ -14,10 +14,10 @@ function firstEven(items) {
       evens.push(items[i]);
     }
   }
-  return evens;
+  return evens[0];
 }
 
-firstEven([1,3,5,7,10]);
+firstEven([1,3,5,7,10,13,14]);
 
 
 
